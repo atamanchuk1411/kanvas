@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.1, maximum-scale=2.0, minimum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg" href="./assets/images/logoK.svg">
+    <title>Kanvas</title>
+    <script type="module" crossorigin src="./assets/js/main.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/js/app.js">
+    <link rel="stylesheet" crossorigin href="./assets/styles.css">
+  </head>
+  <body> 
+    <header> <a class="logo" href="index.html"> <img src="data:image/svg+xml,%3csvg%20version='1.2'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2034%2039'%20width='34'%20height='39'%3e%3cstyle%3e.a{fill:%238ad3ff}.b{fill:%23e6eff2}.c{fill:%233b5362}.d{fill:%2356c107}.e{fill:%23ff9724}%3c/style%3e%3cpath%20fill-rule='evenodd'%20class='a'%20d='m1%2012h9v27h-9z'/%3e%3cpath%20fill-rule='evenodd'%20class='b'%20d='m0%200h22v9h-22z'/%3e%3cpath%20fill-rule='evenodd'%20class='c'%20d='m13%2013h9v15h-9z'/%3e%3cpath%20fill-rule='evenodd'%20class='d'%20d='m13%2031h21v8h-21z'/%3e%3cpath%20fill-rule='evenodd'%20class='e'%20d='m25%200h9v28h-9z'/%3e%3c/svg%3e" alt="kanvas">
+        <h1>Kanvas</h1></a>
+      <div class="info"> 
+        <ul> 
+          <li> <a href="#">ГАЛЕРЕЯ</a></li>
+          <li> <a href="#"> ПРО НАС</a></li>
+        </ul><a class="green" href="#">ЗАМОВИТИ ДЗВІНОК</a>
+      </div>
+    </header>
+    <main> 
+      <div class="canvas"> <img src="./assets/images/easel.png">
+        <div class="white" id="white"></div>
+      </div>
+      <div class="wrapper"> 
+        <div class="details">
+          <div class="size"> 
+            <h2>Виберіть розмір</h2>
+            <div class="chooseSize"> 
+              <input type="button" id="size1" value="30x30">
+              <input type="button" id="size2" value="30x90">
+              <input type="button" id="size3" value="90x120">
+              <input type="button" id="size4" value="90x150">
+              <button class="choose" type="button" id="choose">ЗАДАТИ РОЗМІР</button>
+            </div>
+            <div class="custom"> 
+              <div class="pad">
+                <label for="width">ширина</label>
+                <input type="number" id="width">
+              </div>
+              <p>x </p>
+              <div> 
+                <label for="height">висота</label>
+                <input type="number" id="height">
+              </div>
+              <button type="button" id="calculate">ПІДРАХУВАТИ</button>
+            </div>
+            <hr>
+          </div>
+          <div class="options"> 
+            <h2>Додаткові опції</h2>
+            <div class="extra"> 
+              <div>
+                <label>
+                  <input type="checkbox" value="35" id="extra1">дорожче полотно
+                </label>
+                <p>+ 35 грн</p>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" value="10" id="extra2">з рамкою
+                </label>
+                <p>+ 10 грн</p>
+              </div>
+              <div>
+                <label>
+                  <input type="checkbox" value="40" id="extra3">з доставкою (Нова Пошта)
+                </label>
+                <p>+ 40 грн</p>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div class="buy">
+            <button type="submit" id="purchase">ПРИДБАТИ</button>
+            <p>
+               ЗАГАЛЬНА СУМА:<span class="price" id="total">0</span><span class="uah">грн</span></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>© Kanvas. Всі права захищені</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+doctype html
+html(lang="uk")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, user-scalable=yes, initial-scale=0.1, maximum-scale=2.0, minimum-scale=1.0")
+        link(rel="stylesheet" href="assets/styles/style.sass")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet")
+        link(rel="icon" type="image/svg" href="assets/images/logoK.svg")
+        title Kanvas
+    body 
+        include components/mixins 
+        header 
+            a.logo(href="index.html") 
+                img(src="assets/images/logoK.svg", alt="kanvas")
+                h1 Kanvas
+            .info 
+                ul 
+                    li 
+                        a(href="#") ГАЛЕРЕЯ
+                    li 
+                        a(href="#")  ПРО НАС
+                a.green(href="#") ЗАМОВИТИ ДЗВІНОК
+        main 
+            .canvas 
+                img(src="assets/images/easel.png")
+                .white(id="white")
+            .wrapper 
+                .details
+                    .size 
+                        h2 Виберіть розмір
+                        .chooseSize 
+                            input(type="button", id="size1", value="30x30") 
+                            input(type="button", id="size2", value="30x90") 
+                            input(type="button", id="size3", value="90x120") 
+                            input(type="button", id="size4", value="90x150") 
+                            button.choose(type="button", id="choose") ЗАДАТИ РОЗМІР
+                        .custom 
+                            div.pad
+                                label(for="width") ширина
+                                input(type="number", id="width")
+                            p x 
+                            div 
+                                label(for="height") висота
+                                input(type="number", id="height")
+                            button(type="button", id="calculate") ПІДРАХУВАТИ
+                        hr
+                    .options 
+                        h2 Додаткові опції
+                        .extra 
+                            div
+                                label
+                                    input(type="checkbox", value="35", id="extra1")
+                                    | дорожче полотно
+                                p + 35 грн
+                            div
+                                label
+                                    input(type="checkbox", value="10", id="extra2")
+                                    | з рамкою
+                                p + 10 грн
+                            div
+                                label
+                                    input(type="checkbox", value="40", id="extra3")
+                                    | з доставкою (Нова Пошта)
+                                p + 40 грн
+                    hr
+                    .buy
+                        button(type="submit", id="purchase") ПРИДБАТИ
+                        p 
+                            | ЗАГАЛЬНА СУМА:
+                            span.price(id="total") 0
+                            span.uah грн
+        footer
+            p © Kanvas. Всі права захищені
+        script(type="module" src="/main.js")
