@@ -8,6 +8,8 @@ const size4 = document.querySelector("#size4");
 const choose = document.querySelector("#choose");
 const width = document.querySelector("#width");
 const height = document.querySelector("#height");
+const pad = document.querySelector("#pad");
+const custom = document.querySelector("#custom");
 const calculate = document.querySelector("#calculate");
 const extra1 = document.querySelector("#extra1");
 const extra2 = document.querySelector("#extra2");
@@ -19,36 +21,84 @@ function chooseSize(width, height) {
     canvas.style.width = width * 3 + "px";
     canvas.style.height = height * 3 + "px";
     price = Math.floor(width * height * 0.1);
+    total.textContent = price;
+    if (extra1.checked) {
+       total.textContent = +(total.textContent) + +(extra1.value);
+    }
+    if (extra2.checked) {
+       total.textContent = +(total.textContent) + +(extra2.value);
+    }
+    if (extra3.checked) {
+       total.textContent = +(total.textContent) + +(extra3.value);
+    }
 }
 
 size1.addEventListener("click", function () {
-    widthFixed = 30;
-    heightFixed = 30;
+    if (size2.classList.contains('checked')) {
+        size2.classList.remove('checked')
+    }
+    if (size3.classList.contains('checked')) {
+        size3.classList.remove('checked')
+    }
+    if (size4.classList.contains('checked')) {
+        size4.classList.remove('checked')
+    }
+    size1.classList.add('checked')
+    chooseSize(30, 30)
 })
 
 size2.addEventListener("click", function () {
-    widthFixed = 30;
-    heightFixed = 90;
+    if (size1.classList.contains('checked')) {
+        size1.classList.remove('checked')
+    }
+    if (size3.classList.contains('checked')) {
+        size3.classList.remove('checked')
+    }
+    if (size4.classList.contains('checked')) {
+        size4.classList.remove('checked')
+    }
+    size2.classList.add('checked')
+    chooseSize(30, 90)
 })
 
 size3.addEventListener("click", function () {
-    widthFixed = 90;
-    heightFixed = 120;
+    if (size2.classList.contains('checked')) {
+        size2.classList.remove('checked')
+    }
+    if (size1.classList.contains('checked')) {
+        size1.classList.remove('checked')
+    }
+    if (size4.classList.contains('checked')) {
+        size4.classList.remove('checked')
+    }
+    size3.classList.add('checked')
+    chooseSize(90, 120)
 })
 
 size4.addEventListener("click", function () {
-    widthFixed = 90;
-    heightFixed = 150;
+    if (size2.classList.contains('checked')) {
+        size2.classList.remove('checked')
+    }
+    if (size3.classList.contains('checked')) {
+        size3.classList.remove('checked')
+    }
+    if (size1.classList.contains('checked')) {
+        size1.classList.remove('checked')
+    }
+    size4.classList.add('checked')
+    chooseSize(90, 150)
 })
 
 choose.addEventListener("click", function () {
-    chooseSize(widthFixed, heightFixed)
-    if (extra1.checked == true || extra2.checked == true || extra3.checked == true) {
-       extra1.checked = false; 
-       extra2.checked = false; 
-       extra3.checked = false; 
+    if (custom.classList.contains("hidden")) {
+        custom.classList.remove("hidden");
+        pad.classList.remove("extraPad");
+        choose.textContent = "ПРИХОВАТИ";
+    } else {
+        custom.classList.add("hidden");
+        pad.classList.add("extraPad");
+        choose.textContent = "ЗАДАТИ РОЗМІР";
     }
-    total.textContent = price;
 });
 
 calculate.addEventListener("click", function () {
@@ -66,13 +116,19 @@ calculate.addEventListener("click", function () {
         alert(err);
         return;
     }
-    chooseSize(+(width.value), +(height.value));
-    if (extra1.checked == true || extra2.checked == true || extra3.checked == true) {
-       extra1.checked = false; 
-       extra2.checked = false; 
-       extra3.checked = false; 
+    if (size1.classList.contains('checked')) {
+        size1.classList.remove('checked')
     }
-    total.textContent = price;
+    if (size2.classList.contains('checked')) {
+        size2.classList.remove('checked')
+    }
+    if (size3.classList.contains('checked')) {
+        size3.classList.remove('checked')
+    }
+    if (size4.classList.contains('checked')) {
+        size4.classList.remove('checked')
+    }
+    chooseSize(+(width.value), +(height.value));
 });
 
 extra1.addEventListener("change", function () {
@@ -84,7 +140,7 @@ extra1.addEventListener("change", function () {
 });
 
 extra2.addEventListener("change", function () {
-    if (extra1.checked) {
+    if (extra2.checked) {
         total.textContent = +(total.textContent) + +(extra2.value);
     } else {
         total.textContent = +(total.textContent) - +(extra2.value);
@@ -92,7 +148,7 @@ extra2.addEventListener("change", function () {
 });
 
 extra3.addEventListener("change", function () {
-    if (extra1.checked) {
+    if (extra3.checked) {
         total.textContent = +(total.textContent) + +(extra3.value);
     } else {
         total.textContent = +(total.textContent) - +(extra3.value);

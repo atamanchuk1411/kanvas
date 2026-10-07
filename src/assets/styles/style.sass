@@ -89,6 +89,7 @@ footer
             box-shadow: 0 0 15px rgba(86, 193, 7, 0.7)
 
 .canvas
+    min-height: 650px
     position: relative
     padding-top: 90px
     background-color: #bfe6f4
@@ -134,17 +135,30 @@ footer
         transition: .5s
         &:hover
             box-shadow: 0 0 5px rgba(0,0,0,0.5)
-    .choose
-        padding: 11px 14px
-        font-size: 14px
-        font-weight: 700
-        color: #4c7792
-        border-radius: 7px
-        background-color: #d6edfb
-        border: none
-        transition: .5s
-        &:hover
-            box-shadow: 0 0 5px rgba(76, 119, 146, 0.5)
+
+.checked
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+    
+.choose
+    padding: 11px 14px
+    font-size: 14px
+    font-weight: 700
+    color: #4c7792
+    border-radius: 7px
+    background-color: #d6edfb
+    border: none
+    transition: .5s
+    &:hover
+        box-shadow: 0 0 5px rgba(76, 119, 146, 0.5)
+
+.hidden 
+    margin: 0
+    max-height: 0
+    visibility: hidden
+    overflow: hidden
+
+.extraPad
+    padding-bottom: 15px
 
 .custom
     position: relative

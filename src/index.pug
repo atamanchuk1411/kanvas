@@ -33,13 +33,13 @@ html(lang="uk")
                 .details
                     .size 
                         h2 Виберіть розмір
-                        .chooseSize 
+                        .chooseSize.extraPad(id='pad')
                             input(type="button", id="size1", value="30x30") 
                             input(type="button", id="size2", value="30x90") 
                             input(type="button", id="size3", value="90x120") 
                             input(type="button", id="size4", value="90x150") 
                             button.choose(type="button", id="choose") ЗАДАТИ РОЗМІР
-                        .custom 
+                        .custom.hidden(id="custom")
                             div.pad
                                 label(for="width") ширина
                                 input(type="number", id="width")
