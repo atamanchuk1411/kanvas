@@ -67,6 +67,11 @@ calculate.addEventListener("click", function () {
         return;
     }
     chooseSize(+(width.value), +(height.value));
+    if (extra1.checked == true || extra2.checked == true || extra3.checked == true) {
+       extra1.checked = false; 
+       extra2.checked = false; 
+       extra3.checked = false; 
+    }
     total.textContent = price;
 });
 
