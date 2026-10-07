@@ -43,7 +43,12 @@ size4.addEventListener("click", function () {
 
 choose.addEventListener("click", function () {
     chooseSize(widthFixed, heightFixed)
-    total.textContent = +(total.textContent) + price;
+    if (extra1.checked == true || extra2.checked == true || extra3.checked == true) {
+       extra1.checked = false; 
+       extra2.checked = false; 
+       extra3.checked = false; 
+    }
+    total.textContent = price;
 });
 
 calculate.addEventListener("click", function () {
@@ -62,7 +67,7 @@ calculate.addEventListener("click", function () {
         return;
     }
     chooseSize(+(width.value), +(height.value));
-    total.textContent = +(total.textContent) + price;
+    total.textContent = price;
 });
 
 extra1.addEventListener("change", function () {
